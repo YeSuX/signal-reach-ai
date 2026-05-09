@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: "invalid_payload" }, { status: 400 });
   }
 
-  const { env } = await getCloudflareContext({ async: true });
+  const { env } = getCloudflareContext();
   const waitlistEnv = env as WaitlistEnv;
 
   if (!waitlistEnv.DB || !waitlistEnv.TURNSTILE_SECRET_KEY) {

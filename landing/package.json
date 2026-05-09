@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "preview": "opennextjs-cloudflare build && wrangler dev",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy"
+    "deploy": "opennextjs-cloudflare build && OPEN_NEXT_DEPLOY=true wrangler deploy worker.js"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.12.2",

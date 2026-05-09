@@ -7,7 +7,7 @@ type WaitlistConfigEnv = CloudflareEnv & {
 };
 
 export async function GET() {
-  const { env } = await getCloudflareContext({ async: true });
+  const { env } = getCloudflareContext();
   const waitlistEnv = env as WaitlistConfigEnv;
 
   return NextResponse.json(
