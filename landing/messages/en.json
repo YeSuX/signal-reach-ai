@@ -1,0 +1,183 @@
+{
+  "landing": {
+    "nav": {
+      "product": "Product",
+      "examples": "Example",
+      "useCases": "Use cases",
+      "faq": "FAQ",
+      "language": "中文"
+    },
+    "hero": {
+      "badge": "Early access · AI people search for high-signal outbound",
+      "title": "Find high-signal people from a natural language description.",
+      "subtitle": "SignalReach AI searches across the web, explains why each person matches, and turns results into personalized outreach drafts.",
+      "primaryCta": "Join the waitlist",
+      "secondaryCta": "Submit a search query",
+      "queryLabel": "Query",
+      "query": "Find RevOps leaders at US B2B SaaS companies hiring sales roles.",
+      "signalsLabel": "Signals detected",
+      "signals": ["Role fit", "Company fit", "Hiring signal", "CRM signal"],
+      "topMatch": "Top match",
+      "matchRole": "Revenue Operations leader",
+      "scoreLabel": "Match score",
+      "score": "91",
+      "evidence": "LinkedIn · Careers page · Company site"
+    },
+    "problem": {
+      "eyebrow": "The current workflow",
+      "title": "Finding the right person is still painfully manual.",
+      "body": "You search across platforms, compare profiles, guess whether someone is relevant, hunt for contact details, and then write outreach from scratch.",
+      "traditional": "Traditional workflow",
+      "signalreach": "SignalReach workflow",
+      "oldSteps": ["Search across platforms", "Compare profiles manually", "Guess relevance", "Hunt for contacts", "Write outreach from scratch"],
+      "newSteps": ["Describe target", "Review evidence-backed matches", "Draft outreach with context"]
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "From target description to outreach-ready people.",
+      "steps": [
+        {
+          "title": "Describe who you want",
+          "body": "Write a natural-language target instead of building brittle filters."
+        },
+        {
+          "title": "Search public sources",
+          "body": "SignalReach looks for role fit, company fit, recent signals, evidence, and contactability."
+        },
+        {
+          "title": "Review evidence-backed matches",
+          "body": "Every result explains why the person fits and which sources support the match."
+        },
+        {
+          "title": "Draft outreach with context",
+          "body": "Generate messages based on actual evidence, not generic templates."
+        }
+      ]
+    },
+    "example": {
+      "eyebrow": "Example output",
+      "title": "Not a list. A research-ready shortlist.",
+      "query": "Find RevOps leaders at US-based B2B SaaS companies with 50-500 employees that are currently hiring sales roles.",
+      "cards": [
+        {
+          "role": "RevOps Lead",
+          "segment": "B2B SaaS · 120 employees",
+          "score": "91",
+          "why": "Owns revenue systems, company is hiring 4 sales roles, and public pages mention HubSpot operations.",
+          "evidence": ["Profile", "Careers page", "Company site"],
+          "angle": "Scaling sales ops without adding manual reporting work"
+        },
+        {
+          "role": "Sales Operations Director",
+          "segment": "Vertical SaaS · 260 employees",
+          "score": "86",
+          "why": "Recently joined the company, sales team is expanding, and the company is moving upmarket.",
+          "evidence": ["Profile", "Funding news", "Job post"],
+          "angle": "Clean handoff between sales hiring and GTM systems"
+        },
+        {
+          "role": "Revenue Systems Manager",
+          "segment": "AI SaaS · 80 employees",
+          "score": "82",
+          "why": "Owns CRM workflows and the company is actively recruiting AEs and SDRs.",
+          "evidence": ["Profile", "Hiring page", "Tech stack signal"],
+          "angle": "Reduce ops drag while adding new outbound capacity"
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use cases",
+      "title": "Built for people-search workflows where quality matters.",
+      "items": [
+        {
+          "title": "B2B outbound",
+          "query": "Find sales leaders at SaaS companies showing expansion signals.",
+          "result": "Evidence-backed prospects and outreach angles."
+        },
+        {
+          "title": "Creator sourcing",
+          "query": "Find AI productivity creators with business audiences.",
+          "result": "Creator fit, audience evidence, and collaboration hooks."
+        },
+        {
+          "title": "Recruiting",
+          "query": "Find PMs who built AI agent products at startups.",
+          "result": "Candidate context, proof points, and recruiting drafts."
+        },
+        {
+          "title": "Expert discovery",
+          "query": "Find forecasting experts with recent public work.",
+          "result": "Credible experts, publications, and contact paths."
+        }
+      ]
+    },
+    "difference": {
+      "eyebrow": "Why different",
+      "title": "Built around relevance, evidence, and actionability.",
+      "not": ["Not another lead database.", "Not a keyword search tool.", "Not an email blasting product."],
+      "pillars": [
+        {
+          "title": "Relevance",
+          "body": "Matches are ranked against your actual target, not just surface filters."
+        },
+        {
+          "title": "Evidence",
+          "body": "Every recommendation keeps the source links that support the match."
+        },
+        {
+          "title": "Actionability",
+          "body": "Results are prepared for outreach, follow-up, and feedback."
+        }
+      ]
+    },
+    "form": {
+      "eyebrow": "Early access",
+      "title": "Join the waitlist with a real search query.",
+      "body": "If your query is a strong fit, I may send back a manual demo report before the product opens.",
+      "email": "Email",
+      "role": "Role",
+      "company": "Company",
+      "useCase": "Primary use case",
+      "query": "Describe someone you wish you could find faster",
+      "placeholderEmail": "you@company.com",
+      "placeholderRole": "Founder, Growth Lead, SDR...",
+      "placeholderCompany": "Company name",
+      "placeholderQuery": "Find RevOps leaders at US B2B SaaS companies hiring sales roles...",
+      "submit": "Request early access",
+      "success": "You're on the list. Your email client will open with the submission details.",
+      "privacy": "No spam. Your query is used only for customer discovery and demo report selection.",
+      "options": ["B2B outbound", "Creator sourcing", "Recruiting", "Expert discovery", "Other"]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Clear boundaries from day one.",
+      "items": [
+        {
+          "q": "Is this a CRM?",
+          "a": "No. SignalReach focuses on finding and preparing high-quality people matches. CRM integrations may come later."
+        },
+        {
+          "q": "Does it automatically send emails?",
+          "a": "Not by default. Early versions generate drafts and exports. Sending requires user review and authorization."
+        },
+        {
+          "q": "What data does it use?",
+          "a": "SignalReach focuses on public, explainable sources and keeps evidence links with recommendations."
+        },
+        {
+          "q": "Who is it for?",
+          "a": "Early versions are best for founders, growth teams, sales teams, agencies, and creator marketers who frequently search for people."
+        },
+        {
+          "q": "Can I submit a real search query?",
+          "a": "Yes. That is the best way to get early access and help shape the benchmark."
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "AI people search for high-signal outbound.",
+      "privacy": "Evidence-backed. Human-reviewed. Built for quality over volume."
+    }
+  }
+}
+

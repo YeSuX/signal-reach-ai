@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F6F3EC"/>
+  <circle cx="175" cy="125" r="210" fill="#1F8A5B" fill-opacity="0.12"/>
+  <circle cx="1035" cy="105" r="190" fill="#D89614" fill-opacity="0.16"/>
+  <rect x="80" y="72" width="1040" height="486" rx="40" fill="#FFFDF7" stroke="#DED7C8" stroke-width="2"/>
+  <text x="128" y="150" fill="#1F8A5B" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">SIGNALREACH AI</text>
+  <text x="128" y="252" fill="#15130F" font-family="Georgia, serif" font-size="72" font-weight="700">Find high-signal people</text>
+  <text x="128" y="334" fill="#15130F" font-family="Georgia, serif" font-size="72" font-weight="700">from a natural language</text>
+  <text x="128" y="416" fill="#15130F" font-family="Georgia, serif" font-size="72" font-weight="700">description.</text>
+  <rect x="760" y="190" width="282" height="244" rx="28" fill="#15130F"/>
+  <text x="792" y="246" fill="#FFFDF7" font-family="Arial, sans-serif" font-size="22" font-weight="700">RevOps Lead</text>
+  <rect x="792" y="280" width="128" height="34" rx="17" fill="#1F8A5B"/>
+  <text x="820" y="303" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">91 match</text>
+  <text x="792" y="354" fill="#AAA292" font-family="Arial, sans-serif" font-size="18">Evidence-backed</text>
+  <text x="792" y="386" fill="#AAA292" font-family="Arial, sans-serif" font-size="18">Outreach-ready</text>
+</svg>
+

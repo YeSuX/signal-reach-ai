@@ -1,0 +1,183 @@
+{
+  "landing": {
+    "nav": {
+      "product": "产品",
+      "examples": "示例",
+      "useCases": "场景",
+      "faq": "常见问题",
+      "language": "English"
+    },
+    "hero": {
+      "badge": "早期访问 · 面向高质量 outbound 的 AI 找人引擎",
+      "title": "用一句话找到高质量目标人选。",
+      "subtitle": "SignalReach AI 会跨公开网络搜索目标对象，解释每个人为什么匹配，并生成可编辑的个性化外联草稿。",
+      "primaryCta": "加入 waitlist",
+      "secondaryCta": "提交搜索任务",
+      "queryLabel": "搜索任务",
+      "query": "找到正在招聘销售岗位的美国 B2B SaaS 公司 RevOps 负责人。",
+      "signalsLabel": "识别到的信号",
+      "signals": ["角色匹配", "公司匹配", "招聘信号", "CRM 信号"],
+      "topMatch": "最佳匹配",
+      "matchRole": "Revenue Operations 负责人",
+      "scoreLabel": "匹配分",
+      "score": "91",
+      "evidence": "LinkedIn · 招聘页 · 公司官网"
+    },
+    "problem": {
+      "eyebrow": "当前流程",
+      "title": "找到合适的人仍然非常手动。",
+      "body": "你需要在多个平台搜索、比较资料、猜测是否相关、寻找联系方式，然后再从零开始写外联。",
+      "traditional": "传统流程",
+      "signalreach": "SignalReach 流程",
+      "oldSteps": ["跨平台搜索", "手动比较资料", "猜测相关性", "寻找联系方式", "从零写外联"],
+      "newSteps": ["描述目标对象", "查看带证据的匹配", "生成有上下文的外联草稿"]
+    },
+    "how": {
+      "eyebrow": "工作方式",
+      "title": "从目标描述到可触达人选。",
+      "steps": [
+        {
+          "title": "描述你要找的人",
+          "body": "用自然语言表达目标，而不是堆复杂筛选器。"
+        },
+        {
+          "title": "跨公开来源搜索",
+          "body": "系统会寻找角色匹配、公司匹配、近期信号、来源证据和可触达性。"
+        },
+        {
+          "title": "查看带证据的匹配",
+          "body": "每个结果都会解释为什么匹配，以及哪些来源支持这个判断。"
+        },
+        {
+          "title": "生成有上下文的外联",
+          "body": "基于真实证据生成消息，而不是套用泛泛模板。"
+        }
+      ]
+    },
+    "example": {
+      "eyebrow": "输出示例",
+      "title": "不是联系人列表，而是可行动的研究短名单。",
+      "query": "找到美国 B2B SaaS 公司里负责 RevOps 的人，公司规模 50-500 人，并且最近正在招聘销售岗位。",
+      "cards": [
+        {
+          "role": "RevOps 负责人",
+          "segment": "B2B SaaS · 120 人",
+          "score": "91",
+          "why": "负责收入系统，公司正在招聘 4 个销售岗位，并且公开页面出现 HubSpot 运营信号。",
+          "evidence": ["个人资料", "招聘页", "公司官网"],
+          "angle": "在销售扩张时减少手工报表和运营负担"
+        },
+        {
+          "role": "Sales Operations Director",
+          "segment": "Vertical SaaS · 260 人",
+          "score": "86",
+          "why": "近期加入公司，销售团队正在扩张，公司有上探中大型客户的迹象。",
+          "evidence": ["个人资料", "融资新闻", "招聘信息"],
+          "angle": "连接销售招聘和 GTM 系统建设"
+        },
+        {
+          "role": "Revenue Systems Manager",
+          "segment": "AI SaaS · 80 人",
+          "score": "82",
+          "why": "负责 CRM 工作流，公司正在招聘 AE 和 SDR。",
+          "evidence": ["个人资料", "招聘页", "技术栈信号"],
+          "angle": "在新增 outbound 产能时降低运营摩擦"
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "使用场景",
+      "title": "适合那些质量比数量更重要的找人流程。",
+      "items": [
+        {
+          "title": "B2B outbound",
+          "query": "找到有扩张信号的 SaaS 公司销售负责人。",
+          "result": "带证据的潜在客户和外联角度。"
+        },
+        {
+          "title": "创作者 sourcing",
+          "query": "找到面向商业用户的 AI productivity 创作者。",
+          "result": "创作者匹配、受众证据和合作切入点。"
+        },
+        {
+          "title": "招聘",
+          "query": "找到做过 AI agent 产品的创业公司 PM。",
+          "result": "候选人上下文、证明点和招聘外联草稿。"
+        },
+        {
+          "title": "专家发现",
+          "query": "找到近期有公开成果的预测领域专家。",
+          "result": "可信专家、发表内容和联系路径。"
+        }
+      ]
+    },
+    "difference": {
+      "eyebrow": "差异",
+      "title": "围绕相关性、证据和可行动性构建。",
+      "not": ["不是另一个联系人数据库。", "不是关键词搜索工具。", "不是邮件群发平台。"],
+      "pillars": [
+        {
+          "title": "相关性",
+          "body": "结果会根据你的真实目标排序，而不是只看表层筛选器。"
+        },
+        {
+          "title": "证据",
+          "body": "每个推荐都会保留支持匹配判断的来源链接。"
+        },
+        {
+          "title": "可行动性",
+          "body": "结果会为外联、跟进和反馈做好准备。"
+        }
+      ]
+    },
+    "form": {
+      "eyebrow": "早期访问",
+      "title": "加入 waitlist，并提交一个真实搜索任务。",
+      "body": "如果你的任务很适合，我可能会先手工返回一份 demo report。",
+      "email": "邮箱",
+      "role": "角色",
+      "company": "公司",
+      "useCase": "主要场景",
+      "query": "描述一个你希望更快找到的人",
+      "placeholderEmail": "you@company.com",
+      "placeholderRole": "创始人、增长负责人、SDR...",
+      "placeholderCompany": "公司名称",
+      "placeholderQuery": "找到正在招聘销售岗位的美国 B2B SaaS 公司 RevOps 负责人...",
+      "submit": "申请早期访问",
+      "success": "你已加入列表。邮件客户端会打开，并带上这次提交的内容。",
+      "privacy": "不会发送垃圾邮件。你的搜索任务只用于用户研究和 demo report 筛选。",
+      "options": ["B2B outbound", "创作者 sourcing", "招聘", "专家发现", "其他"]
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "从第一天开始明确边界。",
+      "items": [
+        {
+          "q": "这是 CRM 吗？",
+          "a": "不是。SignalReach 专注于找到并准备高质量人选，CRM 集成可以在后续加入。"
+        },
+        {
+          "q": "它会自动发邮件吗？",
+          "a": "默认不会。早期版本生成草稿和导出内容，发送需要用户审核和授权。"
+        },
+        {
+          "q": "它使用什么数据？",
+          "a": "SignalReach 聚焦公开、可解释的来源，并为推荐结果保留证据链接。"
+        },
+        {
+          "q": "适合谁使用？",
+          "a": "早期版本适合经常找人的创始人、增长团队、销售团队、代理商和创作者营销团队。"
+        },
+        {
+          "q": "我可以提交真实搜索任务吗？",
+          "a": "可以。这是获得早期访问并帮助完善 benchmark 的最好方式。"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "面向高质量 outbound 的 AI people search。",
+      "privacy": "有证据、有人审、重质量而不是重数量。"
+    }
+  }
+}
+
