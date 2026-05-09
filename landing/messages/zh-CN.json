@@ -144,7 +144,14 @@
       "placeholderCompany": "公司名称",
       "placeholderQuery": "找到正在招聘销售岗位的美国 B2B SaaS 公司 RevOps 负责人...",
       "submit": "申请早期访问",
-      "success": "你已加入列表。邮件客户端会打开，并带上这次提交的内容。",
+      "submitting": "提交中...",
+      "success": "你已加入列表。你的搜索任务已经保存。",
+      "error": "提交失败，请稍后再试。",
+      "invalidError": "请检查表单内容后再提交。",
+      "configError": "Waitlist 提交功能还没有完成配置。",
+      "turnstileRequired": "请先完成人机验证。",
+      "turnstileExpired": "验证已过期，请重新完成验证。",
+      "turnstileError": "验证失败，请刷新验证后再试。",
       "privacy": "不会发送垃圾邮件。你的搜索任务只用于用户研究和 demo report 筛选。",
       "options": ["B2B outbound", "创作者 sourcing", "招聘", "专家发现", "其他"]
     },
@@ -180,4 +187,3 @@
     }
   }
 }
-

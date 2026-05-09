@@ -74,7 +74,14 @@ export type LandingContent = {
     placeholderCompany: string;
     placeholderQuery: string;
     submit: string;
+    submitting: string;
     success: string;
+    error: string;
+    invalidError: string;
+    configError: string;
+    turnstileRequired: string;
+    turnstileExpired: string;
+    turnstileError: string;
     privacy: string;
     options: string[];
   };
@@ -88,4 +95,3 @@ export type LandingContent = {
     privacy: string;
   };
 };
-

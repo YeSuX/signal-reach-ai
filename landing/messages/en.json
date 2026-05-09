@@ -144,7 +144,14 @@
       "placeholderCompany": "Company name",
       "placeholderQuery": "Find RevOps leaders at US B2B SaaS companies hiring sales roles...",
       "submit": "Request early access",
-      "success": "You're on the list. Your email client will open with the submission details.",
+      "submitting": "Submitting...",
+      "success": "You're on the list. Your search query has been saved.",
+      "error": "Something went wrong. Please try again in a moment.",
+      "invalidError": "Please check the form and try again.",
+      "configError": "Waitlist submission is not fully configured yet.",
+      "turnstileRequired": "Please complete the verification before submitting.",
+      "turnstileExpired": "Verification expired. Please complete it again.",
+      "turnstileError": "Verification failed. Please refresh the challenge and try again.",
       "privacy": "No spam. Your query is used only for customer discovery and demo report selection.",
       "options": ["B2B outbound", "Creator sourcing", "Recruiting", "Expert discovery", "Other"]
     },
@@ -180,4 +187,3 @@
     }
   }
 }
-
