@@ -1,0 +1,1012 @@
+version: 1
+project: SignalReach AI
+created_at: "2026-05-09"
+description: >
+  Phase 0 benchmark queries for evaluating AI-native people search quality.
+  The dataset covers B2B outbound, creator sourcing, recruiting, and expert discovery.
+
+queries:
+  - id: b2b_001
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by outbound research and RevOps/Sales Ops lead quality discussions."
+    target_user:
+      role: founder
+      company_stage: seed_to_series_b
+      goal: book_sales_calls
+    raw_query: >
+      Find US-based B2B SaaS companies with RevOps or Sales Ops leaders,
+      company size 50-500, that have been hiring sales roles recently and may use
+      Salesforce or HubSpot.
+    parsed_criteria:
+      target_roles:
+        - RevOps
+        - Revenue Operations
+        - Sales Operations
+      industries:
+        - B2B SaaS
+      locations:
+        - United States
+      company_size:
+        min: 50
+        max: 500
+      signals:
+        - recent sales hiring
+        - uses Salesforce or HubSpot
+        - revenue team growth
+    must_have:
+      - person has a current RevOps, Revenue Operations, Sales Operations, or closely related leadership role
+      - company is a B2B software or SaaS company
+      - company is plausibly between 50 and 500 employees
+      - at least one verifiable public source exists for role and company
+    nice_to_have:
+      - recent sales or go-to-market hiring signal
+      - public evidence of Salesforce, HubSpot, or CRM usage
+      - active LinkedIn profile or personal website
+    disqualifiers:
+      - consultants without an operating company role
+      - companies smaller than 20 employees
+      - people whose role evidence is older than 24 months
+    required_evidence:
+      - profile_url
+      - company_url
+      - role_evidence
+      - company_segment_evidence
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: b2b_002
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by discussions about tracking funding, hiring, job changes, and warm buying signals."
+    target_user:
+      role: founder
+      company_stage: early_stage
+      goal: sell_sales_analytics_or_pipeline_tool
+    raw_query: >
+      Find heads of sales or sales leaders at recently funded B2B SaaS startups
+      in North America that are expanding their go-to-market team.
+    parsed_criteria:
+      target_roles:
+        - Head of Sales
+        - VP Sales
+        - Director of Sales
+        - Chief Revenue Officer
+      industries:
+        - B2B SaaS
+      locations:
+        - United States
+        - Canada
+      company_stage:
+        - seed
+        - series_a
+        - series_b
+      signals:
+        - recent funding
+        - sales hiring
+        - team expansion
+    must_have:
+      - person has a current sales leadership role
+      - company is a B2B SaaS startup
+      - public signal of recent funding or go-to-market team expansion exists
+      - source evidence supports the person's current role
+    nice_to_have:
+      - company has open sales roles
+      - founder or sales leader posts about growth or pipeline
+      - contactable through LinkedIn, email, or company contact page
+    disqualifiers:
+      - agencies
+      - consultants
+      - companies without a clear software product
+    required_evidence:
+      - profile_url
+      - company_url
+      - funding_or_hiring_signal
+      - role_evidence
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: b2b_003
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by users trying to identify buyer pain points for cold outreach."
+    target_user:
+      role: agency_owner
+      company_stage: small_business
+      goal: sell_website_or_ads_services
+    raw_query: >
+      Find owners or marketing decision makers at local service businesses in the
+      US that appear to have outdated websites, weak local SEO, or active paid ads
+      but poor landing pages.
+    parsed_criteria:
+      target_roles:
+        - Owner
+        - Founder
+        - Marketing Director
+        - General Manager
+      industries:
+        - local services
+        - home services
+        - clinics
+        - professional services
+      locations:
+        - United States
+      signals:
+        - outdated website
+        - poor local SEO
+        - active paid ads
+        - weak landing pages
+    must_have:
+      - business is a local service business
+      - person is likely a decision maker
+      - public business website or listing exists
+      - at least one evidence-backed improvement opportunity exists
+    nice_to_have:
+      - visible advertising activity
+      - poor mobile website experience
+      - Google Business Profile exists
+    disqualifiers:
+      - franchises with centralized marketing
+      - businesses without any identifiable decision maker
+      - businesses outside the US
+    required_evidence:
+      - business_url
+      - profile_or_contact_url
+      - pain_point_evidence
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.4
+
+  - id: b2b_004
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by lead data service providers focusing on ICP-targeted leads instead of spray-and-pray lists."
+    target_user:
+      role: lead_generation_consultant
+      company_stage: solo_or_small_agency
+      goal: sell_lead_research_services
+    raw_query: >
+      Find B2B service companies that sell to startups or SMBs and likely need
+      better outbound lead research because their current positioning is broad
+      or their target ICP is unclear.
+    parsed_criteria:
+      target_roles:
+        - Founder
+        - CEO
+        - Growth Lead
+        - Sales Lead
+      industries:
+        - B2B services
+        - marketing agencies
+        - software agencies
+        - sales agencies
+      company_size:
+        min: 2
+        max: 50
+      signals:
+        - broad positioning
+        - unclear ICP
+        - outbound or lead generation mentioned publicly
+    must_have:
+      - company sells a B2B service
+      - decision maker can be identified
+      - public messaging suggests broad or unclear target customer
+      - evidence supports the outreach angle
+    nice_to_have:
+      - founder posts about client acquisition
+      - website has vague audience definition
+      - company publishes cold outreach or growth content
+    disqualifiers:
+      - pure consumer businesses
+      - companies with mature sales operations teams
+      - no public website
+    required_evidence:
+      - company_url
+      - decision_maker_profile
+      - positioning_or_outbound_signal
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.35
+
+  - id: b2b_005
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by community discussions about lead quality in insurance and trigger-based lead generation."
+    target_user:
+      role: insurance_agent
+      company_stage: independent_or_small_agency
+      goal: find_high_intent_commercial_insurance_leads
+    raw_query: >
+      Find owners or operations leaders at small construction and contractor
+      businesses in Texas that may need commercial insurance, especially those
+      showing growth, hiring, new projects, or license activity.
+    parsed_criteria:
+      target_roles:
+        - Owner
+        - Founder
+        - Operations Manager
+        - General Manager
+      industries:
+        - construction
+        - contractors
+        - trades
+      locations:
+        - Texas
+      signals:
+        - hiring
+        - new projects
+        - license or permit activity
+        - business expansion
+    must_have:
+      - business is a contractor or construction-related company
+      - likely decision maker is identifiable
+      - company is located in Texas
+      - at least one public growth or activity signal exists
+    nice_to_have:
+      - commercial vehicle or workers compensation relevance
+      - public phone or email
+      - recent job posts or project announcements
+    disqualifiers:
+      - national franchises without local decision makers
+      - inactive businesses
+      - residential-only hobby operations
+    required_evidence:
+      - business_url_or_listing
+      - decision_maker_source
+      - growth_or_activity_signal
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.4
+
+  - id: b2b_006
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by users tracking buyer mid-problem signals and warm loops."
+    target_user:
+      role: founder
+      company_stage: early_stage
+      goal: sell_customer_support_ai_tool
+    raw_query: >
+      Find customer support or operations leaders at B2B SaaS companies that are
+      publicly hiring support roles, mentioning ticket volume, or discussing
+      customer response time problems.
+    parsed_criteria:
+      target_roles:
+        - Head of Support
+        - Customer Support Manager
+        - VP Customer Success
+        - Operations Lead
+      industries:
+        - B2B SaaS
+      signals:
+        - support hiring
+        - ticket volume
+        - response time issues
+        - customer success scaling
+    must_have:
+      - person has customer support, customer success, or operations responsibility
+      - company is a B2B software company
+      - public signal suggests support scaling pressure
+      - source evidence supports the signal
+    nice_to_have:
+      - company uses Zendesk, Intercom, Help Scout, or similar
+      - recent product growth or funding
+      - public LinkedIn activity from support leader
+    disqualifiers:
+      - consumer-only companies
+      - no identifiable support or CS owner
+      - stale role evidence
+    required_evidence:
+      - profile_url
+      - company_url
+      - support_scaling_signal
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: b2b_007
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by account selection and account intelligence discussions."
+    target_user:
+      role: account_executive
+      company_stage: mid_market_saas
+      goal: identify_accounts_likely_to_buy_security_compliance_software
+    raw_query: >
+      Find security, compliance, or IT leaders at fintech or healthtech startups
+      that recently announced enterprise customers, SOC 2, HIPAA, or compliance
+      hiring needs.
+    parsed_criteria:
+      target_roles:
+        - Head of Security
+        - Security Lead
+        - Compliance Lead
+        - IT Director
+        - CTO
+      industries:
+        - fintech
+        - healthtech
+      company_stage:
+        - seed
+        - series_a
+        - series_b
+      signals:
+        - enterprise customer announcement
+        - SOC 2
+        - HIPAA
+        - compliance hiring
+    must_have:
+      - company operates in fintech or healthtech
+      - identifiable security, compliance, IT, or technical decision maker
+      - public compliance or enterprise readiness signal exists
+    nice_to_have:
+      - recent funding
+      - open security or compliance roles
+      - company serves regulated customers
+    disqualifiers:
+      - agencies
+      - generic IT service providers
+      - no compliance relevance
+    required_evidence:
+      - profile_url
+      - company_url
+      - compliance_or_enterprise_signal
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: b2b_008
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by discussions about trigger events, tech stack changes, and expansion signals."
+    target_user:
+      role: growth_lead
+      company_stage: series_a
+      goal: sell_data_warehouse_or_revops_integration_tool
+    raw_query: >
+      Find operations, analytics, or data leaders at SaaS companies that recently
+      adopted or are hiring for Salesforce, HubSpot, Snowflake, dbt, or Looker.
+    parsed_criteria:
+      target_roles:
+        - Operations Lead
+        - Revenue Operations
+        - Data Lead
+        - Analytics Lead
+        - Business Operations
+      industries:
+        - SaaS
+      signals:
+        - hiring for Salesforce
+        - hiring for HubSpot
+        - hiring for Snowflake
+        - hiring for dbt
+        - hiring for Looker
+    must_have:
+      - person owns operations, revenue operations, analytics, or data
+      - company is a SaaS company
+      - public job post or profile indicates target tool usage or hiring
+    nice_to_have:
+      - recent data team growth
+      - open GTM operations roles
+      - active hiring page
+    disqualifiers:
+      - consulting firms
+      - non-software companies
+      - no technology stack evidence
+    required_evidence:
+      - profile_url
+      - company_url
+      - tech_stack_or_job_post_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: b2b_009
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by HN discussion about niche B2B founders looking for role-based buyers."
+    target_user:
+      role: technical_founder
+      company_stage: bootstrapped
+      goal: sell_risk_forecasting_or_research_software
+    raw_query: >
+      Find Chief Risk Officers, risk analysts, or research directors at government
+      agencies, think tanks, and large enterprises who work on crowd forecasting,
+      geopolitical risk, or strategic risk analysis.
+    parsed_criteria:
+      target_roles:
+        - Chief Risk Officer
+        - Risk Analyst
+        - Research Director
+        - Strategic Risk Lead
+        - Forecasting Lead
+      industries:
+        - government
+        - think tanks
+        - enterprise risk
+        - research institutions
+      signals:
+        - crowd forecasting
+        - geopolitical risk
+        - strategic risk
+        - prediction markets
+    must_have:
+      - person works in risk, forecasting, or research leadership
+      - organization has relevance to government, policy, enterprise risk, or research
+      - public evidence links person to relevant domain
+    nice_to_have:
+      - publications, talks, or reports on forecasting
+      - public email or institutional contact page
+      - active professional profile
+    disqualifiers:
+      - financial advisors focused only on retail investing
+      - academic profiles with no applied risk relevance
+      - no evidence of current role
+    required_evidence:
+      - profile_url
+      - organization_url
+      - domain_relevance_evidence
+    success_criteria:
+      min_relevant_people: 6
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: b2b_010
+    scenario: b2b_outbound
+    source: public_community_research
+    source_notes:
+      - "Inspired by technical founders learning sales stack and needing lead generation plus follow-up."
+    target_user:
+      role: technical_founder
+      company_stage: pre_seed
+      goal: sell_developer_tool_to_engineering_teams
+    raw_query: >
+      Find engineering leaders at fast-growing developer tooling or AI infrastructure
+      startups that are hiring platform engineers or developer experience roles.
+    parsed_criteria:
+      target_roles:
+        - VP Engineering
+        - Head of Engineering
+        - Engineering Manager
+        - Developer Experience Lead
+        - Platform Engineering Lead
+      industries:
+        - developer tools
+        - AI infrastructure
+        - cloud infrastructure
+      signals:
+        - platform engineering hiring
+        - developer experience hiring
+        - recent funding
+        - engineering team growth
+    must_have:
+      - person has engineering leadership or DX/platform ownership
+      - company is in developer tooling, AI infrastructure, or cloud infrastructure
+      - public hiring or growth signal exists
+    nice_to_have:
+      - engineering blog activity
+      - GitHub organization activity
+      - public email, LinkedIn, or X profile
+    disqualifiers:
+      - agencies
+      - crypto-only projects without company evidence
+      - stale employment evidence
+    required_evidence:
+      - profile_url
+      - company_url
+      - hiring_or_growth_signal
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: creator_001
+    scenario: creator_sourcing
+    source: product_prd
+    source_notes:
+      - "Core SignalReach use case from original PRD."
+    target_user:
+      role: creator_marketing_manager
+      company_stage: startup
+      goal: find_ai_productivity_creators
+    raw_query: >
+      Find English-speaking TikTok and YouTube creators focused on AI productivity,
+      workflow automation, or founder productivity, with roughly 50k-500k followers
+      and signs of recent brand collaborations.
+    parsed_criteria:
+      creator_platforms:
+        - TikTok
+        - YouTube
+      topics:
+        - AI productivity
+        - workflow automation
+        - founder productivity
+      audience:
+        - founders
+        - operators
+        - knowledge workers
+      follower_range:
+        min: 50000
+        max: 500000
+      signals:
+        - recent brand collaborations
+        - consistent posting
+    must_have:
+      - creator publishes in English
+      - content is primarily about AI productivity, automation, or work tools
+      - public creator profile exists
+      - audience appears relevant to professional or founder use cases
+    nice_to_have:
+      - recent sponsored content
+      - newsletter or personal website
+      - public business email
+    disqualifiers:
+      - pure entertainment creators
+      - creators with mostly consumer gadget content
+      - inactive for more than 6 months
+    required_evidence:
+      - creator_profile_url
+      - content_topic_evidence
+      - audience_or_collaboration_signal
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.35
+
+  - id: creator_002
+    scenario: creator_sourcing
+    source: public_community_research
+    source_notes:
+      - "Designed to test niche B2B creator sourcing."
+    target_user:
+      role: b2b_marketer
+      company_stage: seed_to_series_a
+      goal: find_linkedin_b2b_saas_creators
+    raw_query: >
+      Find LinkedIn creators who write about B2B SaaS growth, outbound sales,
+      founder-led sales, or GTM strategy and have an audience of startup founders
+      or sales leaders.
+    parsed_criteria:
+      creator_platforms:
+        - LinkedIn
+      topics:
+        - B2B SaaS growth
+        - outbound sales
+        - founder-led sales
+        - GTM strategy
+      audience:
+        - startup founders
+        - sales leaders
+        - growth teams
+    must_have:
+      - creator regularly posts on LinkedIn
+      - content focuses on B2B SaaS sales, growth, or GTM
+      - audience relevance can be inferred from content, comments, or profile
+    nice_to_have:
+      - newsletter, podcast, course, or community
+      - prior sponsored or partner content
+      - public email or website
+    disqualifiers:
+      - generic motivational creators
+      - enterprise consultants with no creator activity
+      - mostly consumer marketing content
+    required_evidence:
+      - creator_profile_url
+      - content_evidence
+      - audience_relevance_evidence
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: creator_003
+    scenario: creator_sourcing
+    source: public_community_research
+    source_notes:
+      - "Designed to test technical creator discovery."
+    target_user:
+      role: developer_marketer
+      company_stage: series_a
+      goal: find_developer_tool_creators
+    raw_query: >
+      Find YouTube creators or technical bloggers who explain developer tools,
+      AI coding tools, cloud infrastructure, or DevOps workflows to software engineers.
+    parsed_criteria:
+      creator_platforms:
+        - YouTube
+        - blogs
+        - newsletters
+      topics:
+        - developer tools
+        - AI coding tools
+        - cloud infrastructure
+        - DevOps workflows
+      audience:
+        - software engineers
+        - engineering managers
+        - developer advocates
+    must_have:
+      - creator publishes technical educational content
+      - audience is software developers or engineering teams
+      - public profile or content archive exists
+    nice_to_have:
+      - accepts sponsorships
+      - public business email
+      - active GitHub, newsletter, or community
+    disqualifiers:
+      - creators focused only on beginner coding tutorials
+      - inactive technical blogs
+      - content unrelated to developer tooling
+    required_evidence:
+      - creator_profile_url
+      - topic_evidence
+      - contact_or_sponsorship_signal
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: creator_004
+    scenario: creator_sourcing
+    source: public_community_research
+    source_notes:
+      - "Designed to test vertical influencer sourcing for regulated industries."
+    target_user:
+      role: insurance_marketing_manager
+      company_stage: growth
+      goal: find_insurance_and_small_business_creators
+    raw_query: >
+      Find creators, newsletter writers, or podcast hosts who reach independent
+      insurance agents, small business owners, or local service business operators.
+    parsed_criteria:
+      creator_platforms:
+        - YouTube
+        - LinkedIn
+        - newsletters
+        - podcasts
+      topics:
+        - insurance agents
+        - small business operations
+        - local services
+        - commercial insurance
+      audience:
+        - independent insurance agents
+        - small business owners
+        - local service operators
+    must_have:
+      - creator reaches insurance agents or small business operators
+      - public content archive exists
+      - audience or niche relevance can be explained with evidence
+    nice_to_have:
+      - podcast sponsorship page
+      - newsletter sponsorship page
+      - active LinkedIn presence
+    disqualifiers:
+      - consumer personal finance creators only
+      - broad business influencers with no vertical relevance
+      - inactive for more than 12 months
+    required_evidence:
+      - creator_profile_url
+      - audience_evidence
+      - content_topic_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: creator_005
+    scenario: creator_sourcing
+    source: public_community_research
+    source_notes:
+      - "Designed to test sales automation and outbound creator sourcing."
+    target_user:
+      role: growth_marketer
+      company_stage: startup
+      goal: find_outbound_sales_automation_influencers
+    raw_query: >
+      Find creators or operators on X and LinkedIn who publicly share workflows
+      about outbound automation, Clay, Apollo, n8n, lead enrichment, or AI sales agents.
+    parsed_criteria:
+      creator_platforms:
+        - X
+        - LinkedIn
+      topics:
+        - outbound automation
+        - Clay
+        - Apollo
+        - n8n
+        - lead enrichment
+        - AI sales agents
+      audience:
+        - founders
+        - SDRs
+        - growth marketers
+        - sales operators
+    must_have:
+      - person actively posts about outbound automation or sales tooling
+      - content includes workflows, examples, or tool breakdowns
+      - audience is relevant to sales, growth, or founders
+    nice_to_have:
+      - newsletter, course, community, or agency
+      - public contact channel
+      - recent viral or high-engagement posts
+    disqualifiers:
+      - generic AI influencers with no sales relevance
+      - purely promotional accounts
+      - inactive accounts
+    required_evidence:
+      - creator_profile_url
+      - relevant_post_or_content_url
+      - audience_or_engagement_signal
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: recruiting_001
+    scenario: recruiting
+    source: product_prd
+    source_notes:
+      - "Core recruiting use case from original PRD."
+    target_user:
+      role: startup_founder
+      company_stage: seed
+      goal: find_ai_agent_product_manager_candidates
+    raw_query: >
+      Find product managers who have worked on AI agents, developer tools, or workflow
+      automation products at early-stage startups and may be open to new opportunities.
+    parsed_criteria:
+      target_roles:
+        - Product Manager
+        - Senior Product Manager
+        - Product Lead
+      experience:
+        - AI agents
+        - developer tools
+        - workflow automation
+      company_stage:
+        - early-stage startups
+      signals:
+        - open to work
+        - recent job change
+        - public writing about AI products
+    must_have:
+      - person has product management experience
+      - evidence links them to AI agents, developer tools, or workflow automation
+      - prior startup experience is visible or plausible
+    nice_to_have:
+      - public portfolio, blog, or product teardown
+      - open-to-work or recent transition signal
+      - active LinkedIn or X profile
+    disqualifiers:
+      - recruiters
+      - product marketers without PM experience
+      - no evidence of AI or developer product work
+    required_evidence:
+      - profile_url
+      - experience_evidence
+      - startup_or_product_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: recruiting_002
+    scenario: recruiting
+    source: public_community_research
+    source_notes:
+      - "Designed to test technical recruiting for specialized AI infra roles."
+    target_user:
+      role: technical_recruiter
+      company_stage: series_a
+      goal: find_ai_infrastructure_engineers
+    raw_query: >
+      Find senior engineers who have worked on LLM infrastructure, vector databases,
+      retrieval systems, evaluation tooling, or agent frameworks and have public
+      GitHub, papers, talks, or technical writing.
+    parsed_criteria:
+      target_roles:
+        - Senior Software Engineer
+        - ML Engineer
+        - Infrastructure Engineer
+        - Staff Engineer
+      experience:
+        - LLM infrastructure
+        - vector databases
+        - retrieval systems
+        - evaluation tooling
+        - agent frameworks
+      signals:
+        - GitHub activity
+        - papers
+        - talks
+        - technical blog posts
+    must_have:
+      - person has engineering or ML infrastructure experience
+      - public work demonstrates relevant technical depth
+      - at least one profile or project source exists
+    nice_to_have:
+      - recent open source contributions
+      - active in AI engineering communities
+      - contactable via email, GitHub, LinkedIn, or personal site
+    disqualifiers:
+      - purely academic profiles with no engineering implementation evidence
+      - junior-only profiles
+      - no public technical artifact
+    required_evidence:
+      - profile_url
+      - technical_artifact_url
+      - experience_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.2
+
+  - id: recruiting_003
+    scenario: recruiting
+    source: public_community_research
+    source_notes:
+      - "Designed to test go-to-market recruiting."
+    target_user:
+      role: founder
+      company_stage: seed
+      goal: find_first_growth_or_sales_hire
+    raw_query: >
+      Find early go-to-market operators who have been first sales, first growth,
+      or founder-led sales hires at B2B SaaS startups and have experience building
+      outbound from scratch.
+    parsed_criteria:
+      target_roles:
+        - Growth Lead
+        - Sales Lead
+        - Founding AE
+        - GTM Lead
+        - Revenue Lead
+      experience:
+        - first sales hire
+        - founder-led sales
+        - outbound from scratch
+        - early-stage B2B SaaS
+      signals:
+        - public posts about sales process
+        - startup operating experience
+        - prior founding team or early employee role
+    must_have:
+      - person has early-stage GTM or sales operating experience
+      - evidence supports outbound or founder-led sales experience
+      - company context is B2B or SaaS
+    nice_to_have:
+      - writes publicly about GTM
+      - open to advisory or new opportunities
+      - strong LinkedIn or X presence
+    disqualifiers:
+      - enterprise-only sales leaders with no startup experience
+      - sales coaches with no operating role
+      - no evidence of outbound execution
+    required_evidence:
+      - profile_url
+      - role_evidence
+      - outbound_or_startup_experience_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.3
+
+  - id: expert_001
+    scenario: expert_discovery
+    source: public_community_research
+    source_notes:
+      - "Inspired by users seeking experts and niche B2B contacts across government, think tanks, and research orgs."
+    target_user:
+      role: researcher
+      company_stage: research_team
+      goal: find_geopolitical_risk_forecasting_experts
+    raw_query: >
+      Find experts in geopolitical risk forecasting, crowd forecasting, prediction
+      markets, or strategic foresight who have published reports, papers, talks,
+      or public commentary in the last 3 years.
+    parsed_criteria:
+      expert_domains:
+        - geopolitical risk
+        - crowd forecasting
+        - prediction markets
+        - strategic foresight
+      evidence_types:
+        - papers
+        - reports
+        - talks
+        - public commentary
+      recency:
+        max_age_years: 3
+    must_have:
+      - person has public expertise in forecasting or geopolitical risk
+      - at least one recent public artifact exists
+      - organization or professional background is identifiable
+    nice_to_have:
+      - institutional email
+      - speaking page or conference profile
+      - practical forecasting project experience
+    disqualifiers:
+      - generic political commentators without forecasting evidence
+      - outdated profiles with no recent activity
+      - anonymous accounts
+    required_evidence:
+      - expert_profile_url
+      - publication_or_talk_url
+      - domain_expertise_evidence
+    success_criteria:
+      min_relevant_people: 8
+      min_average_relevance: 2
+      min_contactable_ratio: 0.25
+
+  - id: expert_002
+    scenario: expert_discovery
+    source: public_community_research
+    source_notes:
+      - "Designed to test expert discovery for sales operations and outbound workflow research."
+    target_user:
+      role: founder
+      company_stage: early_stage
+      goal: interview_sales_operations_experts
+    raw_query: >
+      Find sales operations, revenue operations, or outbound automation experts
+      who publicly discuss lead quality, intent data, sales stack design, Apollo,
+      Clay, Sales Navigator, enrichment, or outbound personalization.
+    parsed_criteria:
+      expert_domains:
+        - sales operations
+        - revenue operations
+        - outbound automation
+        - lead quality
+        - intent data
+        - sales stack
+      tools:
+        - Apollo
+        - Clay
+        - LinkedIn Sales Navigator
+        - enrichment tools
+      signals:
+        - public posts
+        - podcasts
+        - newsletters
+        - consulting pages
+    must_have:
+      - person publicly discusses sales operations or outbound automation
+      - content includes practical workflows, tools, or frameworks
+      - contact path is available
+    nice_to_have:
+      - experience advising B2B SaaS teams
+      - operator background
+      - active LinkedIn or X presence
+    disqualifiers:
+      - generic sales motivational speakers
+      - no practical tooling or workflow discussion
+      - inactive profiles
+    required_evidence:
+      - expert_profile_url
+      - relevant_content_url
+      - contact_or_booking_url
+    success_criteria:
+      min_relevant_people: 10
+      min_average_relevance: 2
+      min_contactable_ratio: 0.35
+
